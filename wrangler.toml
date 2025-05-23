@@ -1,0 +1,8 @@
+name = "habit-next-worker"
+compatibility_date = "2024-05-22"  # 오늘 날짜 또는 가까운 날짜로
+
+[[d1_databases]]
+binding = "DB"  # 코드에서 사용할 이름 (예: env.DB)
+database_name = "habit-next"  # 웹에서 생성한 이름
+database_id = "ae3ade50-c300-49d0-b021-62260f2fe19b"  # 웹에서 복사한 DATABASE ID
+migrations_dir = "drizzle"
