@@ -1,10 +1,14 @@
-import Image from "next/image";
+import { User } from "next-auth";
 
-const Profile = ({styles}: {styles?: string}) => {
+
+const Profile = ({styles, user}: {styles?: string, user: User}) => {
+  const userImage = user?.image || '/user.jpeg'
   return (
     <div className={styles}>
-        <Image src="/user.jpeg" alt="user" width={100} height={100} />
-        <p className="text-xs text-gray-950">@user_name</p> 
+        <img src={userImage} alt="user" className="rounded-full w-20 h-20" />
+        <div className="flex flex-col gap-2">
+          <p className="text-xs text-gray-950">{user.name}</p>
+        </div>
     </div>
   );
 };

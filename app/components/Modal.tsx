@@ -1,6 +1,4 @@
-import Button from "./Button";
-
-const Modal = ({children, isOpen, onClose, onSubmit}: {children: React.ReactNode, isOpen: boolean, onClose: () => void, onSubmit: () => void}) => {
+const Modal = ({children, footer, isOpen, onClose}: {children: React.ReactNode, footer?: React.ReactNode, isOpen: boolean, onClose: () => void}) => {
     return (
         <div className="">
             <div 
@@ -19,8 +17,11 @@ const Modal = ({children, isOpen, onClose, onSubmit}: {children: React.ReactNode
                         {children}
                     </div>
                     {/* Modal Footer */}
+
                     <div className="flex gap-2 justify-end">
-                        <Button type="primary" styles="px-4 py-2 cursor-pointer w-full" onClick={onSubmit}>Add Habit</Button>
+                    {
+                        footer
+                    }
                     </div>
                 </div>
                 </div>
